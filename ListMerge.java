@@ -9,52 +9,77 @@ public class ListMerge
 {
     public static int[] listMerge(int[] a, int[] b)
     {
-        int count = 0, k = 0;
-        int temp;
+        int i = 0, j = 0, size = 0;
+        int min = a[i];
         
-        //this loop will first count the number of matching IDs
-        for(int i = 0; i < a.length; i++)                           //first got to the value of the first array
+        //this loop determines the minimum size necessary for array c
+        while (i < a.length || j < b.length)
         {
-                     
-            for(int j = 0; j < b.length; j++)                       //then compare it to each value of the next array
+                        
+            if (i < a.length && j < b.length)
             {
-                if(a[i] < b[j])                                    //if there is a match, count it
-                {
-                   
-                }
-            }           
-            
+                i++;
+                j++;
+                size += 1;
+            }
+            else if (i < a.length)
+            {
+                i++;
+                size += 1;
+            }
+            else if (j < b.length)
+            {
+                j++;
+                size += 1;
+            }
         }
         
-        int c[] = new int[count];                                   //make a third array whose size is based on the count above
+        i = 0;
+        j = 0;
         
-        //this loop will then assign those matched IDs to the third array (c), in a similar fashion to the loop above
-        for(int i = 0; i < a.length; i++)
-        {            
-            temp = a[i];
+        
+        int c[] = new int[size];
+        
+        for (int k = 0; k < c.length; k++)
+        {
+           
             
-            for(int j = 0; j < b.length; j++)
+            if (i < a.length && j < b.length)
             {
+                i++;
+                j++;
                 
-                if(temp == b[j])
-                {                                       
-                    c[k] = temp;                                    //assigns a the value from temp to the index of the new array
-                    k++;
+                if (a[i] > b[j])
+                {
+                    min = b[j];
+                    
+                    
+                }
+                else if (a[i] < b[j])
+                {
+                    min = a[i];
+                }
+                else
+                {
+                    min = a[i];
                 }
             }
+            else if (i < a.length)
+            {
+                i++;
+                min = a[i];
+                
+            }
+            else if (j < b.length)
+            {
+                j++;
+                min = b[i];
+                
+            }
             
+            c[k] = min;
         }
         
-        //Prints the number of common friends and their IDs
-        System.out.println("you have " + count + " friends in common");
-        System.out.print("their IDs are ");
-        
-        for(int i = 0; i < c.length; i++)
-        {
-            System.out.print(" " + c[i] + ",");
-        }
-        System.out.println();                                       //we need this to start a new line for any repeated runs of the code
-        
-        
+        return c;
     }
 }
