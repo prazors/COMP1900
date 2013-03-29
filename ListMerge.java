@@ -20,7 +20,7 @@ public class ListMerge
             {
                 if(a[i] < b[j])                                    //if there is a match, count it
                 {
-                    min = a[i];
+                   
                 }
             }           
             
