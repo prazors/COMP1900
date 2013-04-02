@@ -16,31 +16,31 @@ public class ListMerge
         int min = a[i];
         
         //this loop determines the minimum size necessary for array c
-        while (i < a.length || j < b.length)
-        {
-                        
-            if (i < a.length && j < b.length)
-            {
-                i++;
-                j++;
-                size += 1;
-            }
-            else if (i < a.length)
-            {
-                i++;
-                size += 1;
-            }
-            else if (j < b.length)
-            {
-                j++;
-                size += 1;
-            }
-        }
+//         while (i < a.length || j < b.length)
+//         {
+//                         
+//             if (i < a.length && j < b.length)
+//             {
+//                 i++;
+//                 j++;
+//                 size += 1;
+//             }
+//             else if (i < a.length)
+//             {
+//                 i++;
+//                 size += 1;
+//             }
+//             else if (j < b.length)
+//             {
+//                 j++;
+//                 size += 1;
+//             }
+//         }
         
         i = 0;
         j = 0;
         
-        
+        size = (a.length + b.length);
         int c[] = new int[size];
         
         for (int k = 0; k < c.length; k++)
@@ -52,25 +52,20 @@ public class ListMerge
                 
                 
                 
-                if (a[i] > b[j])
-                {
-                    min = b[j];
-                    j++;
-                    i++;
-                    
-                }
-                else if (a[i] < b[j])
+                if (a[i] < b[j])
                 {
                     min = a[i];
                     i++;
-                    j++;
+                    //i++;
+                    
                 }
                 else
                 {
-                    min = a[i];
-                    i++;
+                    min = b[j];
                     j++;
+                    //j++;
                 }
+               
                 
             }
             else if (i < a.length)
@@ -138,8 +133,8 @@ public class ListMerge
         
         
         
-        int a[] = {5, 3, 1, 9, 7};
-        int b[] = {43, 2, 19, 12, 99, 23, 82};
+        int a[] = {1, 20, 19, 55, 72, 81, 99};
+        int b[] = {43, 2, 19, 12, 98, 23, 82, 26};
         
         a = intArraySort(a);
         b = intArraySort(b);
