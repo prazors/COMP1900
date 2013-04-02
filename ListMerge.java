@@ -1,7 +1,8 @@
+
 /**
  * Write a description of class ListMerge here.
  * 
- * Chas Syndergaard 
+ * @author (your name) 
  * @version (a version number or a date)
  */
 import java.util.*;
@@ -96,9 +97,7 @@ public class ListMerge
     
     public static void main(String args[])
     {
-        
-        
-        
+               
         int a[] = {1, 20, 19, 55, 72, 81, 99};
         int b[] = {43, 2, 19, 12, 98, 23, 82, 26};
         
