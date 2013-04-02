@@ -38,7 +38,7 @@ public class DieArrayRun
                 
         
         int list[] = rollDieList(rolls);
-        int slist[] = new int[rolls - 1];                   //cloned array. This will hold only the *successive* values.
+        int slist[] = new int[rolls - 1];                   //cloned array. This will hold only the *successive* values or n - 1 values
         
         //this section assigns the values of 1st array to the cloned array, and trims off the first value
         int j = 0;
@@ -66,7 +66,7 @@ public class DieArrayRun
             }
             
             
-            //if the first value matches the successive value
+            //if the first value matches the successive value then prepare for it to be marked
             if (list[i] == value)
             {                
                 //if the number isn't marked for grouping
