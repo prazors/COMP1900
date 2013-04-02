@@ -1,8 +1,7 @@
-
 /**
  * Write a description of class ListMerge here.
  * 
- * @author (your name) 
+ * Chas Syndergaard 
  * @version (a version number or a date)
  */
 import java.util.*;
