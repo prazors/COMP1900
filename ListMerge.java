@@ -15,72 +15,40 @@ public class ListMerge
         int i = 0, j = 0, size = 0;
         int min = a[i];
         
-        //this loop determines the minimum size necessary for array c
-//         while (i < a.length || j < b.length)
-//         {
-//                         
-//             if (i < a.length && j < b.length)
-//             {
-//                 i++;
-//                 j++;
-//                 size += 1;
-//             }
-//             else if (i < a.length)
-//             {
-//                 i++;
-//                 size += 1;
-//             }
-//             else if (j < b.length)
-//             {
-//                 j++;
-//                 size += 1;
-//             }
-//         }
+        size = (a.length + b.length);                   //this sets the length for array c by adding a's length and b's length
         
-        i = 0;
-        j = 0;
-        
-        size = (a.length + b.length);
         int c[] = new int[size];
-        
+        //this section does the comparison of the sorted lists and merges the values array c
         for (int k = 0; k < c.length; k++)
         {
-           
             
+            //as long as the last element hasn't been exceeded for either list
             if (i < a.length && j < b.length)
             {
-                
-                
-                
+                //make a comparison of the min
                 if (a[i] < b[j])
                 {
                     min = a[i];
-                    i++;
-                    //i++;
-                    
+                    i++;                                        
                 }
                 else
                 {
                     min = b[j];
-                    j++;
-                    //j++;
+                    j++;                    
                 }
                
-                
             }
+            
             else if (i < a.length)
-            {
-                
+            {                
                 min = a[i];
-                i++;
-                
+                i++;                
             }
+            
             else if (j < b.length)
-            {
-                
+            {                
                 min = b[j];
-                j++;
-                
+                j++;                
             }
             
             c[k] = min;
@@ -88,8 +56,7 @@ public class ListMerge
         
         return c;
     }
-    
-    
+        
     
     //This method takes an array of integers and sorts it from lowest to highest
     public static int[] intArraySort(int a[])
