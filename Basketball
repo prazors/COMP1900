@@ -1,4 +1,3 @@
-
 /**
  * Write a description of class Basketball here.
  * 
@@ -20,8 +19,18 @@ public class Basketball
     
     public static double averagePPG(int[][] scores, int p)
     {
-        return -1;
+        
        
+       scores= scores();
+       int row = 0; int total=0; int col;
+       double average=0;
+       for(col=0; col < scores[row].length; col++)
+       {
+           total= total + scores[row][col];
+           row++;
+        }
+         average= (total/col);
+        return average;
     }
         
     
