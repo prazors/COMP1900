@@ -1,3 +1,4 @@
+
 /**
  * Write a description of class Basketball here.
  * 
@@ -19,18 +20,19 @@ public class Basketball
     
     public static double averagePPG(int[][] scores, int p)
     {
-        
+       scores = scores();
        
-       scores= scores();
-       int row = 0; int total=0; int col;
-       double average=0;
-       for(col=0; col < scores[row].length; col++)
+       int row = p; 
+       double total = 0; 
+      
+       for(int col=0; col < scores[row].length; col++)
        {
-           total= total + scores[row][col];
-           row++;
-        }
-         average= (total/col);
-        return average;
+           total = total + scores[row][col];           
+       }
+       
+       double average = (total / scores[row].length);
+       return average;
+       
     }
         
     
@@ -56,13 +58,14 @@ public class Basketball
     public static double averageGameScore(int[][] scores)
     {
         
-        scores = scores();              //keep the name of scores array the same
+        scores = scores();                                      //keep the name of scores array the same
         
         int row = 0, col = 0;
-        int gametotal = 0, total = 0;                  //total points scored in a given game
-        int len = scores[0].length;
-        while( col < len)                                       //while there are still columns remaining
+        int gametotal = 0, total = 0;                           //total points scored in a given game and final total
+        
+        while( col < scores[0].length)                          //while there are still columns remaining
         {
+            
            while ( row < scores.length)                         //total up the rows for that column
            {
                 gametotal = gametotal + scores[row][col];
@@ -71,12 +74,11 @@ public class Basketball
             total = total + gametotal;
             gametotal = 0;
             row = 0;
-            col++;
-            
+            col++;         
             
         }
         
-        total = (total / (scores[0].length));
+        total = (total / (scores[0].length));                   //compute the average
         
         return total;
         
@@ -84,7 +86,7 @@ public class Basketball
     
     public static int singleGameTopScoringPlayer(int[][] scores, int g)
     {
-        
+        return -1;
         
     }
     
@@ -109,7 +111,7 @@ public class Basketball
         }
         
         //int a = singleGameScore(scores, 2);
-        double b = averageGameScore(scores);
+        double b = averagePPG(scores, 0);
         
         System.out.println(b);
         
