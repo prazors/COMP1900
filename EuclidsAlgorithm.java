@@ -8,7 +8,7 @@
 
 import java.util.*;
 public class EuclidsAlgorithm
-{
+{   //this method will find the greatest common divisor between two integers using Euclid's Algorithm
     public static void main(String[] args)
     {
         int integerA, integerB;       

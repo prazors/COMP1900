@@ -15,7 +15,7 @@ public class DieArrayRun
         
         while((rolls) > 0)
         {
-            results[rolls - 1] = (int)(6 * Math.random());
+            results[rolls - 1] = (int)(6 * Math.random() + 1);
             rolls = rolls - 1;
         }
                

@@ -54,7 +54,49 @@ public class MiscTools
  
     }
     
+    //tests if the the provided int is odd, if odd then it returns a boolean true, and if even returns boolean false
+    public static boolean isOdd(int i)
+    {
+        if (i % 2 != 0 )
+        {        
+            return true;
+        }
+        else return false;
+    }
     
+    //tests if the the provided int array is odd, if odd then it returns a boolean true, and if even returns boolean false
+    public static boolean isOdd(int[] a)
+    {
+        int len = 0;
+        for (int i = 0; i < a.length; i++)
+        {
+            len += 1;
+            
+        }
+        
+        if (len % 2 != 0)
+        {
+            return true;
+        }
+        else return false;
+    }
+    
+    //tests if the the provided int array is odd, if odd then it returns a boolean true, and if even returns boolean false
+    public static boolean isOdd(int[][] a)
+    {
+        int len = 0;
+        for (int i = 0; i < a.length; i++)
+        {
+            len += 1;
+            
+        }
+        
+        if (len % 2 != 0)
+        {
+            return true;
+        }
+        else return false;
+    }
     
     //produces factorial results, works for both negative and positive integers only
     public static int factorial(int num)
@@ -198,9 +240,9 @@ public class MiscTools
     
     
     
-    public static int[][] raggedArray()
+    public static int[] raggedArray()
     {
-        int a[][] = {{2}, {3}, {3, 9, 1}, {5}, {2, 8}};
+        int a[] = {1, 2, 3, 4, 5};
         
         return a;
         
@@ -209,22 +251,17 @@ public class MiscTools
         
     }
     
-    public static void main()
+    public static void main(String args[])
     {
-        int a[][] = raggedArray();
-        int i = 0;
+        int num[] = raggedArray();
+        boolean res;
+        Scanner input = new Scanner(System.in);
+//         System.out.println("enter a number");
+//         num = input.nextInt();
         
-    
-        while (i < a.length)
-        {
-            
-            for (int j = 0; j < a[i].length; j++)
-            {
-                System.out.print(a[i][j]);
-                
-            }
-            i++;
+        res = isOdd(num);
         
-        }
-    }
+        System.out.println(res);
+        
+}
 }
