@@ -47,7 +47,35 @@ public class Basketball
     public static double averageGameScore(int[][] scores)
     {
         
-        return -1;
+        scores = scores();              //keep the name of scores array the same
+        
+        int row = 0, col = 0;
+        int gametotal = 0, total = 0;                  //total points scored in a given game
+        int len = scores[0].length;
+        while( col < len)                                       //while there are still columns remaining
+        {
+           while ( row < scores.length)                         //total up the rows for that column
+           {
+                gametotal = gametotal + scores[row][col];
+                row++;
+           }
+            total = total + gametotal;
+            gametotal = 0;
+            row = 0;
+            col++;
+            
+            
+        }
+        
+        total = (total / (scores[0].length));
+        
+        return total;
+        
+    }
+    
+    public static int singleGameTopScoringPlayer(int[][] scores, int g)
+    {
+        
         
     }
     
@@ -72,7 +100,7 @@ public class Basketball
         }
         
         //int a = singleGameScore(scores, 2);
-        double b = averagePPG(scores, 0);
+        double b = averageGameScore(scores);
         
         System.out.println(b);
         
