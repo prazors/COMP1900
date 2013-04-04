@@ -20,6 +20,44 @@ public class ArrayTools
         
     }
     
+    //This method takes an array of integers and sorts it from lowest to highest
+    public static int[] intArraySort(int a[])
+    {
+        int i = 0;
+        int j = 1;
+        int k;
+        
+            //this loop will continue to swap variables until swapping is no longer used through a complete traversal of the array
+            while (j < a.length)
+            {
+                //test if swapping is necessary
+                if (a[i] > a[j])
+                {
+                    //swaps the value of a[i] with a[j] so that the higher value is moved back towards the beginning of the array
+                    k = a[i];
+                    a[i] = a[j];
+                    a[j] = k;
+                    
+                    //resets the indices i, j, back to 0 and 1
+                    i = 0;
+                    j = 1;
+                    
+                }
+                //if a swap wasn't needed, then simply increment the indices i, j
+                else
+                {
+                    i++;
+                    j++;
+                }
+                                
+            }       
+        
+        return a;
+        
+        
+    }
+    
+    
     //this method will sort multiple arrays and return the sorted arrays into a cleanly packaged 2D array.
     public static int[][] arraySortMulti()
     {
