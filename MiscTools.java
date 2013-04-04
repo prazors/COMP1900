@@ -251,17 +251,51 @@ public class MiscTools
         
     }
     
+    public static void iLike(int n)
+    {
+        if (n == 0)
+        {
+            return ;
+        }
+        else
+        {
+            System.out.println("I like Java");
+            iLike(n - 1);
+        }
+        
+    }
+    
+    public static void iLikeCall(int n)
+    {
+        iLike(n);
+        System.out.println("I hope to make an A");        
+        
+    }
+    
+    public static int recursiveSum(int n)
+    {
+        if (n == 0)
+        {
+            return n;
+        }
+        else
+        {
+            return n + recursiveSum(n - 1);     
+        }
+        
+    }
+    
     public static void main(String args[])
     {
         int num[] = raggedArray();
         boolean res;
         Scanner input = new Scanner(System.in);
-//         System.out.println("enter a number");
-//         num = input.nextInt();
+        System.out.println("enter a number");
+        num[0] = input.nextInt();
         
         res = isOdd(num);
         
         System.out.println(res);
         
-}
+    }
 }
