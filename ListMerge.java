@@ -1,8 +1,11 @@
 /*
-* Write a description of class ListMerge here.
-*
-* @author (your name)
-* @version (a version number or a date)
+Description of the Program:
+Author: James Atwood, Chas Syndegaard, Bryan Smith, Kyle Pruitt
+Professor: Dr. Linda Sherrell
+Instructor: Poonam Dharam
+Section: 101
+Date: 4/7/2013
+Lab-num In/Hw: Group Assignment Ch 7, No. 11
 */
 import java.util.*;
 public class ListMerge
