@@ -99,30 +99,84 @@ public class ListMerge
     
     public static void main(String args[])
     {
-               
-        int a[] = {1, 20, 19, 55, 72, 81, 99};
-        int b[] = {43, 2, 19, 12, 98, 23, 82, 26};
+        Scanner input = new Scanner(System.in);
         
-        a = intArraySort(a);
-        b = intArraySort(b);
         
-        int c[] = listMerge(a, b);
+        int mergeContinue = 0;
         
-        int[] d[] = {a, b, c};
-        char mychar = 'a';
-        for (int i = 0; i < 3; i++)
+
+
+
+
+        while (mergeContinue != -999)
         {
-            System.out.print("List " + mychar + ":\t");
-            for (int j = 0; j < d[i].length; j++)
+            int a[], b[];
+            int n, m;
+
+            //get 1st list from user
+            System.out.println("how large is your 1st list?");
+            n = input.nextInt();
+            a = new int[n];
+
+            for (int i = 0; i < n; i++)
             {
-                System.out.print(d[i][j] + "\t");
-                
+                System.out.println("enter an integer");
+                a[i] = input.nextInt();
             }
-            System.out.println();
-            mychar++;
+
+            //get 2nd list from the user
+            System.out.println("how large is your 2nd list?");
+            n = input.nextInt();
+            b = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                System.out.println("enter an integer");
+                b[i] = input.nextInt();
+            }
+
+            //sort the arrays
+            intArraySort(a);
+            intArraySort(b);
+
+
+
+            //merge the two lists and store in array c
+            int c[] = listMerge(a, b);
         
+            int[] d[] = {a, b, c};
+            char mychar = 'a';
+
+            //print the output of the lists
+            for (int i = 0; i < 3; i++)
+            {
+                System.out.print("List " + mychar + ":\t");
+                for (int j = 0; j < d[i].length; j++)
+                {
+                    System.out.print(d[i][j] + "\t");
+                    
+                }
+                System.out.println();
+                mychar++;
             
+            }
+
+            
+
+                System.out.println("continue? type 0 for yes, or -999 for no");
+                mergeContinue = input.nextInt();
+
+               
+
+            
+            
+            
+
         }
+               
+        
+        
+        
         
         
     }
